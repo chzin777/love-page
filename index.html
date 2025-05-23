@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <button onclick="document.querySelector('audio').play()">Clique aqui para ativar o som 🎵</button>
+  <button onclick="tocarMusica()">Clique aqui para ativar a música 🎵</button>
   <audio class="one" src="Thousand.mp3" type="audio/mpeg"
     autoplay=true></audio>
 
@@ -172,6 +172,8 @@
 <script>
   function tocarMusica() {
     const audio = document.getElementById("bg-audio");
+    audio.muted = false;
+    audio.volume = 1.0;
 
     // Reproduz e lida com possíveis bloqueios
     audio.play().then(() => {
